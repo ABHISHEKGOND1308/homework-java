@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+class Division {
+
+    int subtract(int num1, int num2) {
+        int Negative_Num2 = ~num2 + 1;
+
+        while (Negative_Num2 != 0) {
+            int Carry = num1 & Negative_Num2;
+            num1 = num1 ^ Negative_Num2;
+            Negative_Num2 = Carry << 1;
+        }
+
+        return num1;
+    }
+
+    int divide(int num1, int num2) {
+        if (num2 == 0) {
+            System.out.println("Division by zero not allowed!");
+            return 0;
+        }
+
+        boolean Negative = false;
+
+        if (num1 < 0) {
+            num1 = ~num1 + 1;
+            Negative = !Negative;
+        }
+
+        if (num2 < 0) {
+            num2 = ~num2 + 1;
+            Negative = !Negative;
+        }
+
+        int Quotient = 0;
+
+        for (int i = 31; i >= 0; i--) {
+            if ((num1 >> i) >= num2) {
+                num1 = subtract(num1, num2 << i);
+                Quotient = Quotient | (1 << i);
+            }
+        }
+
+        if (Negative) {
+            Quotient = ~Quotient + 1;
+        }
+
+        return Quotient;
+    }
+}
+
+public class Home_Work_AJ_14 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your First Number : ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter Your Second Number : ");
+        int num2 = scanner.nextInt();
+
+        Division obj = new Division();
+        int Result = obj.divide(num1, num2);
+
+        System.out.println("Quotient : " + Result);
+
+        scanner.close();
+    }
+}

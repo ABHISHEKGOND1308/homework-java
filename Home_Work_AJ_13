@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+class Multiplication {
+
+    int add(int num1, int num2) {
+        while (num2 != 0) {
+            int Carry = num1 & num2;
+            num1 = num1 ^ num2;
+            num2 = Carry << 1;
+        }
+        return num1;
+    }
+
+    int multiply(int num1, int num2) {
+        boolean Negative = false;
+
+        if (num1 < 0) {
+            num1 = ~num1 + 1;
+            Negative = !Negative;
+        }
+
+        if (num2 < 0) {
+            num2 = ~num2 + 1;
+            Negative = !Negative;
+        }
+
+        int Result = 0;
+
+        while (num2 != 0) {
+            if ((num2 & 1) == 1) {
+                Result = add(Result, num1);
+            }
+            num1 = num1 << 1;
+            num2 = num2 >> 1;
+        }
+
+        if (Negative) {
+            Result = ~Result + 1;
+        }
+
+        return Result;
+    }
+}
+
+public class Home_Work_AJ_13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your First Number : ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter Your Second Number : ");
+        int num2 = scanner.nextInt();
+
+        Multiplication obj = new Multiplication();
+        int Result = obj.multiply(num1, num2);
+
+        System.out.println("Result : " + Result);
+
+        scanner.close();
+    }
+}

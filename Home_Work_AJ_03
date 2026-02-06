@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+class NumberTool {
+    int Number;
+
+    NumberTool(int Number) {
+        this.Number = Number;
+    }
+
+    void CheckPositiveNegative() {
+        if (Number >= 0) {
+            System.out.println("Positive");
+        } else {
+            System.out.println("Negative");
+        }
+    }
+
+    void CheckEvenOdd() {
+        if (Number % 2 == 0) {
+            System.out.println("Even");
+        } else {
+            System.out.println("Odd");
+        }
+    }
+
+    void CheckDivisible() {
+        if (Number % 5 == 0 && Number % 7 == 0) {
+            System.out.println("Divisible by both 5 and 7");
+        } else {
+            System.out.println("Not divisible by both 5 and 7");
+        }
+    }
+}
+
+public class Home_Work_AJ_03 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Number: ");
+        int Number = sc.nextInt();
+
+        NumberTool obj = new NumberTool(Number);
+
+        obj.CheckPositiveNegative();
+        obj.CheckEvenOdd();
+        obj.CheckDivisible();
+
+        sc.close();
+    }
+}

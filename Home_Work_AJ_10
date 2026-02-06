@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Home_Work_AJ_10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String Stored_Username = "ADMIN";
+        String Stored_Password = "1234";
+
+        int Attempts = 0;
+
+        while (Attempts < 3) {
+            System.out.print("Enter Your Username : ");
+            String Entered_Username = scanner.next();
+
+            System.out.print("Enter Your Password : ");
+            String Entered_Password = scanner.next();
+
+            if (Entered_Username.equals(Stored_Username) && Entered_Password.equals(Stored_Password)) {
+                System.out.println("Login Successful!");
+                break;
+            } else {
+                Attempts++;
+                System.out.println("Wrong Username or Password! Attempts Left : " + (3 - Attempts));
+            }
+        }
+
+        if (Attempts == 3) {
+            System.out.println("Account Locked! Please Try Again Later.");
+        }
+
+        scanner.close();
+    }
+}

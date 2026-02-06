@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Home_Work_AJ_05 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Units Consumed : ");
+        int Units = scanner.nextInt();
+
+        double Bill_Amount;
+
+        if (Units <= 100) {
+            Bill_Amount = Units * 2;
+        } 
+        else if (Units <= 200) {
+            Bill_Amount = (100 * 2) + (Units - 100) * 3;
+        } 
+        else {
+            Bill_Amount = (100 * 2) + (100 * 3) + (Units - 200) * 5;
+        }
+
+        double Fixed_Charge = 150;
+        double Total_Bill = Bill_Amount + Fixed_Charge;
+
+        System.out.println("Energy Charge : " + Bill_Amount);
+        System.out.println("Fixed Meter Charge : " + Fixed_Charge);
+        System.out.println("Total Bill : " + Total_Bill);
+
+        scanner.close();
+    }
+}

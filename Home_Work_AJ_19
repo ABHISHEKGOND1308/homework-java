@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+class Power_Of_Two {
+
+    boolean Check_Power_Of_Two(int num) {
+        return num > 0 && (num & (num - 1)) == 0;
+    }
+}
+
+public class Home_Work_AJ_19 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your Number : ");
+        int num = scanner.nextInt();
+
+        Power_Of_Two obj = new Power_Of_Two();
+        boolean Result = obj.Check_Power_Of_Two(num);
+
+        System.out.println(Result);
+
+        scanner.close();
+    }
+}

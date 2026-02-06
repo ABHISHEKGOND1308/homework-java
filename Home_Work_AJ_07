@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Home_Work_AJ_07 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number : ");
+        int Num = scanner.nextInt();
+
+        int Temp_Num = Num;
+        int Reverse_Num = 0;
+        int Sum_Of_Digits = 0;
+        int Count_Of_Digits = 0;
+
+        while (Temp_Num != 0) {
+            int Digit = Temp_Num % 10;
+            Reverse_Num = Reverse_Num * 10 + Digit;
+            Sum_Of_Digits = Sum_Of_Digits + Digit;
+            Count_Of_Digits++;
+            Temp_Num = Temp_Num / 10;
+        }
+
+        System.out.println("Reverse Number: " + Reverse_Num);
+        System.out.println("Sum Of Digits: " + Sum_Of_Digits);
+        System.out.println("Count Of Digits: " + Count_Of_Digits);
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class Subtraction {
+    int subtract(int num1, int num2) {
+        int Negative_Num2 = ~num2 + 1;
+
+        while (Negative_Num2 != 0) {
+            int Carry = num1 & Negative_Num2;
+            num1 = num1 ^ Negative_Num2;
+            Negative_Num2 = Carry << 1;
+        }
+
+        return num1;
+    }
+}
+
+public class Home_Work_AJ_12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your First Number : ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter Your Second Number : ");
+        int num2 = scanner.nextInt();
+
+        Subtraction obj = new Subtraction();
+        int Result = obj.subtract(num1, num2);
+
+        System.out.println("Result : " + Result);
+
+        scanner.close();
+    }
+}

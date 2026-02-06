@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Home_Work_AJ_04 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your First Number: ");
+        double Num1 = scanner.nextDouble();
+
+        System.out.print("Enter Your Second Number: ");
+        double Num2 = scanner.nextDouble();
+
+        System.out.println("1. Addition");
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+        System.out.println("5. Modulus");
+
+        System.out.print("Enter Choice: ");
+        int Choice = scanner.nextInt();
+
+        switch (Choice) {
+            case 1:
+                System.out.println("Result : " + (Num1 + Num2));
+                break;
+
+            case 2:
+                System.out.println("Result : " + (Num1 - Num2));
+                break;
+
+            case 3:
+                System.out.println("Result : " + (Num1 * Num2));
+                break;
+
+            case 4:
+                if (Num2 != 0) {
+                    System.out.println("Result : " + (Num1 / Num2));
+                } else {
+                    System.out.println("Cannot divide by zero!");
+                }
+                break;
+
+            case 5:
+                System.out.println("Result : " + (Num1 % Num2));
+                break;
+
+            default:
+                System.out.println("Invalid Choice!");
+        }
+
+        scanner.close();
+    }
+}

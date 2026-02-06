@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class Set_Bit {
+
+    int Count_Set_Bits(int num) {
+        int Count = 0;
+
+        while (num != 0) {
+            Count = Count + (num & 1);
+            num = num >> 1;
+        }
+
+        return Count;
+    }
+}
+
+public class Home_Work_AJ_18 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your Number : ");
+        int num = scanner.nextInt();
+
+        Set_Bit obj = new Set_Bit();
+        int Result = obj.Count_Set_Bits(num);
+
+        System.out.println("Total Set Bits : " + Result);
+
+        scanner.close();
+    }
+}

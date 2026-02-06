@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Home_Work_AJ_08 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Value of your number : ");
+        int num = scanner.nextInt();
+
+        for (int Row = 1; Row <= num; Row++) {
+            for (int Column = 1; Column <= Row; Column++) {
+                System.out.print(Column);
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}

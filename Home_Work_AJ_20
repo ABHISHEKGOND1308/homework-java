@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class Multiply_By_Seven {
+
+    int Multiply_By_Seven(int num) {
+        int Result = (num << 3) - num;
+        return Result;
+    }
+}
+
+public class Home_Work_AJ_20 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your Number : ");
+        int num = scanner.nextInt();
+
+        Multiply_By_Seven obj = new Multiply_By_Seven();
+        int Result = obj.Multiply_By_Seven(num);
+
+        System.out.println("Result +: " + Result);
+
+        scanner.close();
+    }
+}

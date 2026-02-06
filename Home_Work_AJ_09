@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Home_Work_AJ_09 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Starting Number : ");
+        int Start_Number = scanner.nextInt();
+
+        System.out.print("Enter Ending Number : ");
+        int End_Number = scanner.nextInt();
+
+        for (int Num = Start_Number; Num <= End_Number; Num++) {
+
+            if (Num <= 1) {
+                continue;
+            }
+
+            int Count = 0;
+
+            for (int i = 2; i <= Num / 2; i++) {
+                if (Num % i == 0) {
+                    Count++;
+                    break;
+                }
+            }
+
+            if (Count == 0) {
+                System.out.println(Num + " is a prime number!");
+            }
+        }
+
+        scanner.close();
+    }
+}

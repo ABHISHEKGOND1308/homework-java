@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+class Maximum {
+
+    int Find_Max(int num1, int num2) {
+        int Difference = num1 - num2;
+        int Sign = (Difference >> 31) & 1;
+        int Max = num1 - Sign * Difference;
+        return Max;
+    }
+}
+
+public class Home_Work_AJ_17 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Your First Number : ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter Your Second Number : ");
+        int num2 = scanner.nextInt();
+
+        Maximum obj = new Maximum();
+        int Result = obj.Find_Max(num1, num2);
+
+        System.out.println("Maximum : " + Result);
+
+        scanner.close();
+    }
+}

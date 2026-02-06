@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Home_Work_AJ_06 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Account Balance : ");
+        double Account_Balance = scanner.nextDouble();
+
+        System.out.print("Enter Withdrawal Amount : ");
+        double Withdrawal_Amount = scanner.nextDouble();
+
+        if (Withdrawal_Amount % 100 == 0 && (Account_Balance - Withdrawal_Amount) >= 1000) {
+            Account_Balance = Account_Balance - Withdrawal_Amount;
+            System.out.println("Withdrawal Successful!");
+            System.out.println("Remaining Balance: " + Account_Balance);
+        } 
+        else {
+            System.out.println("Withdrawal Failed!");
+        }
+
+        scanner.close();
+    }
+}
